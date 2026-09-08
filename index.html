@@ -89,7 +89,7 @@
     display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px;
     align-items:center; padding:96px 0 80px;
   }
-  .hero h1{font-size:52px; line-height:1.12; max-width:560px;}
+  .hero h1{font-size:52px; line-height:1.12; max-width:560px; white-space:nowrap;}
   .hero h1 em{font-style:italic; color:var(--gold);}
   .hero p.lede{
     margin-top:22px; max-width:460px; color:var(--ivory-dim); font-size:17px;
@@ -130,7 +130,8 @@
   .service-row p{color:var(--ivory-dim); font-size:15.5px; max-width:520px; margin:0;}
 
   /* réalisations */
-  .project-card{border:1px solid var(--rule); background:var(--ink-2);}
+  .project-card{border:1px solid var(--rule); background:var(--ink-2); margin-top:32px;}
+  .project-card:first-of-type{margin-top:0;}
   .project-head{padding:34px 34px 0;}
   .project-head h3{font-size:24px; margin-bottom:10px;}
   .project-head p{color:var(--ivory-dim); font-size:15.5px; max-width:640px; margin:0 0 6px;}
@@ -187,7 +188,7 @@
   @media (max-width:860px){
     nav.links{display:none;}
     .hero{grid-template-columns:1fr; padding-top:60px;}
-    .hero h1{font-size:38px;}
+    .hero h1{font-size:32px;}
     .hero-emblem{order:-1; margin-bottom:20px;}
     .emblem-ring{width:220px; height:220px;}
     .emblem-ring.inner{width:190px; height:190px;}
@@ -195,6 +196,9 @@
     .service-row{grid-template-columns:1fr; gap:10px;}
     .about{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:480px){
+    .hero h1{font-size:24px;}
   }
 </style>
 </head>
@@ -223,7 +227,7 @@
       <a href="#apropos">À propos</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn" href="#contact">Demander un devis</a>
+    <a class="btn" href="mailto:contact@mycrafter.fr?subject=Demande%20de%20devis%20-%20My%20Crafter%20Renov%27">Demander un devis</a>
   </div>
 </header>
 
@@ -234,7 +238,7 @@
         <h1>La rénovation, taillée <em>à la main</em>.</h1>
         <p class="lede">Peinture, carrelage, maçonnerie, plâtrerie et agencement sur-mesure : un seul artisan, du premier coup de crayon à la dernière finition, dans le Var.</p>
         <div class="cta-row">
-          <a class="btn" href="#contact">Demander un devis</a>
+          <a class="btn" href="mailto:contact@mycrafter.fr?subject=Demande%20de%20devis%20-%20My%20Crafter%20Renov%27">Demander un devis</a>
         </div>
       </div>
       <div class="hero-emblem">
@@ -302,6 +306,25 @@
           <img src="photo3.jpg" alt="Chantier en cours, cloison déposée, sol en cours d'extension">
           <img class="wide" src="photo6.jpg" alt="Vue d'ensemble du séjour agrandi avec sol terrazzo raccordé">
           <img src="photo5.jpg" alt="Raccord du terrazzo dans le couloir attenant">
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-head">
+          <h3>Douche à l'italienne en travertin avec niche mosaïque</h3>
+          <p>Pose de travertin du sol au plafond dans une douche à l'italienne, avec une voûte suivant la forme du plafond. Une niche a été intégrée dans l'épaisseur du mur et habillée d'une mosaïque décorative multicolore, en rupture assumée avec la sobriété du travertin environnant.</p>
+          <div class="project-tags">
+            <span>Carrelage</span>
+            <span>Douche à l'italienne</span>
+            <span>Niche mosaïque</span>
+          </div>
+        </div>
+        <div class="project-photos">
+          <img class="wide" src="travertin1.jpg" alt="Pose de travertin en cours dans la douche">
+          <img src="travertin2.jpg" alt="Niche habillée d'une mosaïque décorative multicolore">
+          <img src="travertin3.jpg" alt="Détail de la voûte en travertin au-dessus de la niche">
+          <img src="travertin6.jpg" alt="Pose du travertin en cours, mur en cours de carrelage">
+          <img class="wide" src="travertin5.jpg" alt="Douche terminée avec robinetterie thermostatique noire">
+          <img src="travertin4.jpg" alt="Vue d'ensemble de la douche en travertin terminée">
         </div>
       </div>
       <p class="more-soon">D'autres chantiers My Crafter Renov' arrivent prochainement.</p>
