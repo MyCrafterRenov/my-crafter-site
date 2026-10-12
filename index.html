@@ -131,6 +131,13 @@
   .service-row p{color:var(--ivory-dim); font-size:15.5px; max-width:520px; margin:0;}
 
   /* réalisations */
+  .showcase{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .showcase-item{position:relative; display:block; aspect-ratio:4/3; overflow:hidden; border:1px solid var(--rule); background:var(--ink-2);}
+  .showcase-item img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;}
+  .showcase-item span{position:absolute; left:0; right:0; bottom:0; padding:38px 16px 14px; font-size:14px; line-height:1.35; color:var(--ivory); background:linear-gradient(to top, rgba(11,14,19,.92), rgba(11,14,19,0));}
+  .showcase-item:hover img{transform:scale(1.04);}
+  @media (max-width:860px){.showcase{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.showcase{grid-template-columns:1fr;}}
   .project-card{border:1px solid var(--rule); background:var(--ink-2); margin-top:32px;}
   .project-card:first-of-type{margin-top:0;}
   .project-head{padding:34px 34px 0;}
@@ -295,23 +302,55 @@
         <span class="kicker">Réalisations</span>
         <h2>Des chantiers en images</h2>
       </div>
-      <div class="project-card">
-        <div class="project-head">
-          <h3>Un placard oublié transformé en vestiaire d'entrée</h3>
-          <p>Un renfoncement resté à l'état de placard vide, coincé entre l'entrée et la cuisine, a été entièrement repensé en vestiaire fonctionnel. Montage d'une cloison pour redéfinir l'espace, enduit et peinture sur les murs, pose d'une tapisserie décorative en fond de niche, et fabrication sur-mesure d'un coffre à chaussures en menuiserie pour compléter le rangement.</p>
-          <div class="project-tags">
-            <span>Cloison</span>
-            <span>Enduit</span>
-            <span>Peinture</span>
-            <span>Tapisserie</span>
-            <span>Menuiserie sur-mesure</span>
-          </div>
-        </div>
-        <div class="project-photos">
-          <div class="photo-item"><span class="photo-num">1</span><img src="vestiaire1.jpg" alt="Avant travaux, couloir avec ouverture vers la cuisine"></div>
-          <div class="photo-item"><span class="photo-num">2</span><img src="vestiaire2.jpg" alt="Avant travaux, placard vide avant cloisonnement"></div>
-          <div class="photo-item"><span class="photo-num">3</span><img src="vestiaire3.jpg" alt="Vestiaire d'entrée terminé avec coffre à chaussures sur-mesure"></div>
-        </div>
+      <div class="showcase">
+        <a class="showcase-item" href="realisations.html">
+          <img src="photo1.jpg" alt="Séjour avec sol terrazzo noir et blanc restauré" loading="lazy">
+          <span>Raccord d'un terrazzo ancien après dépose d'une cloison</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="travertin5.jpg" alt="Douche terminée avec robinetterie thermostatique noire" loading="lazy">
+          <span>Douche à l'italienne en travertin avec niche mosaïque</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="volet5.jpg" alt="Volet neuf reposé sur la façade" loading="lazy">
+          <span>Création et rénovation de volets battants</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="clim4.jpg" alt="Détail de l'angle de la goulotte de protection" loading="lazy">
+          <span>Habillage d'une liaison de climatisation</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="etabli4.jpg" alt="Établi restauré transformé en meuble console d'intérieur" loading="lazy">
+          <span>Rénovation d'un établi de menuisier ancien</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="vestiaire3.jpg" alt="Vestiaire d'entrée terminé avec coffre à chaussures sur-mesure" loading="lazy">
+          <span>Un placard oublié transformé en vestiaire d'entrée</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="salon3.jpg" alt="Salon terminé avec parquet, luminaire suspendu et décoration" loading="lazy">
+          <span>Rénovation complète d'un salon, du gros œuvre à la déco</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="verriere2.jpg" alt="Verrière atelier ouvrant la cuisine sur le salon" loading="lazy">
+          <span>Une verrière atelier pour ouvrir la cuisine sur le salon</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="cuisine4.jpg" alt="Cuisine terminée, façades blanches et éclairage LED" loading="lazy">
+          <span>Rénovation complète de cuisine</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="coinrepas2.jpg" alt="Coin repas terminé avec étagère murale" loading="lazy">
+          <span>Un coin repas créé dans la cuisine</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="faience4.jpg" alt="Mur de cuisine terminé, faïence noire et blanche" loading="lazy">
+          <span>Habillage en faïence décorative pour un mur de cuisine</span>
+        </a>
+        <a class="showcase-item" href="realisations.html">
+          <img src="salleamanger3.jpg" alt="Salle à manger terminée, parquet chêne massif" loading="lazy">
+          <span>Une salle à manger entièrement rénovée, parquet chêne massif</span>
+        </a>
       </div>
       <div style="text-align:center; margin-top:32px;">
         <a class="btn" href="realisations.html">Voir toutes les réalisations →</a>
