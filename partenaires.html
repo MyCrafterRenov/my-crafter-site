@@ -226,6 +226,26 @@
   .partners-note{margin:34px 0 0; text-align:center; color:var(--ivory-dim); font-size:13px; font-style:italic;}
   @media (max-width:860px){ .partners-grid{grid-template-columns:repeat(2,1fr);} }
   @media (max-width:560px){ .partners-grid{grid-template-columns:1fr;} .partner{min-height:0;} }
+
+  /* menu mobile */
+  .menu-toggle{display:none; background:transparent; border:1px solid var(--gold-soft); color:var(--gold); width:44px; height:44px; border-radius:2px; font-size:22px; line-height:1; cursor:pointer; margin-left:12px;}
+  nav.links .menu-devis{display:none;}
+  @media (max-width:860px){
+    .menu-toggle{display:inline-flex; align-items:center; justify-content:center;}
+    header .nav{flex-wrap:nowrap;}
+    header .nav > .btn{margin-left:auto;}
+    header.open nav.links{
+      display:flex; flex-direction:column; gap:0; position:absolute; left:0; right:0; top:100%;
+      background:#0b0e13; border-bottom:1px solid var(--rule); padding:8px 24px 16px;
+    }
+    header.open nav.links a{padding:14px 0; border-bottom:1px solid var(--rule); font-size:16px;}
+    header.open nav.links a:last-child{border-bottom:none;}
+  }
+  @media (max-width:560px){
+    header .nav > .btn{display:none;}
+    .menu-toggle{margin-left:auto;}
+    header.open nav.links .menu-devis{display:block; color:var(--gold);}
+  }
 </style>
 </head>
 <body>
@@ -253,8 +273,10 @@
       <a href="partenaires.html">Partenaires</a>
       <a href="index.html#apropos">À propos</a>
       <a href="index.html#contact">Contact</a>
+      <a class="menu-devis" href="mailto:contact@mycrafter.fr?subject=Demande%20de%20devis%20-%20My%20Crafter%20Renov%27">Demander un devis</a>
     </nav>
     <a class="btn" href="mailto:contact@mycrafter.fr?subject=Demande%20de%20devis%20-%20My%20Crafter%20Renov%27">Demander un devis</a>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -347,5 +369,15 @@
   }
 </script>
 
+<script>
+(function(){
+  var h=document.querySelector('header'); if(!h) return;
+  var b=h.querySelector('.menu-toggle'); if(!b) return;
+  b.addEventListener('click',function(){
+    var o=h.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false'); b.textContent=o?'\u2715':'\u2630';
+  });
+  h.querySelectorAll('nav.links a').forEach(function(a){a.addEventListener('click',function(){h.classList.remove('open'); b.setAttribute('aria-expanded','false'); b.textContent='\u2630';});});
+})();
+</script>
 </body>
 </html>
