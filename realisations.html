@@ -45,26 +45,6 @@
   .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
   .rule{height:1px; background:var(--rule); border:none; margin:0;}
 
-  /* gate d'accès temporaire */
-  #gate{
-    position:fixed; inset:0; z-index:100; background:var(--ink);
-    display:flex; align-items:center; justify-content:center; padding:24px;
-  }
-  #gate .box{text-align:center; max-width:320px;}
-  #gate img{width:84px; height:84px; object-fit:contain; margin:0 auto 22px; border-radius:50%; border:1px solid var(--gold-soft); background:var(--ink);}
-  #gate p{color:var(--ivory-dim); font-size:14.5px; margin:0 0 20px;}
-  #gate input{
-    width:100%; padding:12px 14px; background:var(--ink-2); border:1px solid var(--rule);
-    color:var(--ivory); font-size:15px; border-radius:2px; text-align:center;
-  }
-  #gate input:focus{outline:none; border-color:var(--gold);}
-  #gate button{
-    margin-top:14px; width:100%; padding:12px; background:transparent; border:1px solid var(--gold);
-    color:var(--gold); font-size:14px; border-radius:2px; cursor:pointer;
-  }
-  #gate button:hover{background:var(--gold); color:var(--ink);}
-  #gate .err{color:#d98a5a; font-size:13px; margin-top:12px; min-height:16px;}
-  #site-content{display:none;}
 
   /* header */
   header{
@@ -233,16 +213,6 @@
 </style>
 </head>
 <body>
-
-<div id="gate">
-  <div class="box">
-    <p style="font-family:'Fraunces', serif; font-size:22px; font-style:italic; color:var(--gold); margin:0 0 18px;">My Crafter Renov'</p>
-    <p>Site en cours de construction — accès réservé.</p>
-    <input type="password" id="gate-pass" placeholder="Mot de passe">
-    <button onclick="checkGate()">Entrer</button>
-    <div class="err" id="gate-err"></div>
-  </div>
-</div>
 
 <div id="site-content">
 <header>
@@ -494,29 +464,6 @@
 </footer>
 
 </div>
-
-<script>
-  const GATE_PASSWORD = "chantier2026";
-  function unlockSite(){
-    document.getElementById('gate').style.display = 'none';
-    document.getElementById('site-content').style.display = 'block';
-  }
-  function checkGate(){
-    const val = document.getElementById('gate-pass').value;
-    if(val === GATE_PASSWORD){
-      sessionStorage.setItem('mcr_unlocked', '1');
-      unlockSite();
-    } else {
-      document.getElementById('gate-err').textContent = "Mot de passe incorrect.";
-    }
-  }
-  document.getElementById('gate-pass').addEventListener('keydown', function(e){
-    if(e.key === 'Enter'){ checkGate(); }
-  });
-  if(sessionStorage.getItem('mcr_unlocked') === '1'){
-    unlockSite();
-  }
-</script>
 
 <script>
 (function(){
